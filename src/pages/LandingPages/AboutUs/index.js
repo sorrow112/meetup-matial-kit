@@ -24,26 +24,28 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+//import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 
 // About Us page sections
-import Information from "pages/LandingPages/AboutUs/sections/Information";
-import Team from "pages/LandingPages/AboutUs/sections/Team";
-import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
+// import Information from "pages/LandingPages/AboutUs/sections/Information";
+// import Team from "pages/LandingPages/AboutUs/sections/Team";
+// import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
 import Newsletter from "pages/LandingPages/AboutUs/sections/Newsletter";
 
 // Routes
-import routes from "routes";
+//import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-about-us.jpg";
+import bgImage from "assets/images/project/mainPage/headerBg.jpg";
+import { Link } from "@mui/material";
+import HowTo from "./sections/HowTo";
 
 function AboutUs() {
   return (
     <>
-      <DefaultNavbar
+      {/* <DefaultNavbar
         routes={routes}
         action={{
           type: "external",
@@ -53,7 +55,7 @@ function AboutUs() {
         }}
         transparent
         light
-      />
+      /> */}
       <MKBox
         minHeight="75vh"
         width="100%"
@@ -69,6 +71,120 @@ function AboutUs() {
           placeItems: "center",
         }}
       >
+        <MKBox component="nav" position="absolute" top="0.5rem" width="100%">
+          <Container>
+            <Grid container flexDirection="row" alignItems="center">
+              <MKTypography
+                component={Link}
+                href="#"
+                variant="button"
+                color="white"
+                fontWeight="regular"
+                py={0.8125}
+                mr={2}
+              >
+                Material Design
+              </MKTypography>
+              <MKButton
+                variant="outlined"
+                color="white"
+                sx={{ display: { xs: "block", lg: "none" }, ml: "auto" }}
+              >
+                <MKBox component="i" color="white" className="fas fa-bars" />
+              </MKButton>
+              <MKBox
+                component="ul"
+                display={{ xs: "none", lg: "flex" }}
+                p={0}
+                my={0}
+                mx="auto"
+                sx={{ listStyle: "none" }}
+              >
+                <MKBox component="li">
+                  <MKTypography
+                    component={Link}
+                    href="#"
+                    variant="button"
+                    color="white"
+                    fontWeight="regular"
+                    p={1}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Home
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                    component={Link}
+                    href="#"
+                    variant="button"
+                    color="white"
+                    fontWeight="regular"
+                    p={1}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    About Us
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                    component={Link}
+                    href="#"
+                    variant="button"
+                    color="white"
+                    fontWeight="regular"
+                    p={1}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Contact Us
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+              <MKBox
+                component="ul"
+                display={{ xs: "none", lg: "flex" }}
+                p={0}
+                m={0}
+                sx={{ listStyle: "none" }}
+              >
+                <MKBox component="li">
+                  <MKTypography
+                    component={Link}
+                    href="#"
+                    variant="button"
+                    p={1}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <MKBox component="i" color="white" className="fab fa-twitter" />
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                    component={Link}
+                    href="#"
+                    variant="button"
+                    p={1}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <MKBox component="i" color="white" className="fab fa-facebook" />
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                    component={Link}
+                    href="#"
+                    variant="button"
+                    p={1}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <MKBox component="i" color="white" className="fab fa-instagram" />
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </Grid>
+          </Container>
+        </MKBox>
+
         <Container>
           <Grid
             container
@@ -89,16 +205,18 @@ function AboutUs() {
                 },
               })}
             >
-              Work with an amazing design
+              Discover, Plan, and Attend Unforgettable Events
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              We&apos;re constantly trying to express ourselves and actualize our dreams. If you
-              have the opportunity to play this game
+              Join eventsTN, the ultimate platform for event enthusiasts. Whether you&apos;re an
+              attendee looking for exciting events or an organizer wanting to create unforgettable
+              experiences, eventsTN is here to make your event journey seamless and unforgettable.
             </MKTypography>
             <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
-              create account
+              Join Us
             </MKButton>
-            <MKTypography variant="h6" color="white" mt={8} mb={1}>
+            <div>
+              {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
             </MKTypography>
             <MKBox display="flex" justifyContent="center" alignItems="center">
@@ -114,7 +232,8 @@ function AboutUs() {
               <MKTypography component="a" variant="body1" color="white" href="#">
                 <i className="fab fa-google-plus" />
               </MKTypography>
-            </MKBox>
+            </MKBox> */}
+            </div>
           </Grid>
         </Container>
       </MKBox>
@@ -127,9 +246,10 @@ function AboutUs() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Information />
-        <Team />
-        <Featuring />
+        {/* <Information />
+        <Team /> */}
+        <HowTo />
+        {/* <Featuring /> hedhi ken t7eb ta3mel statistics */}
         <Newsletter />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
